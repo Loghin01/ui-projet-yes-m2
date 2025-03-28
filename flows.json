@@ -113,17 +113,6 @@
         }
     },
     {
-        "id": "e0d68008298eaddd",
-        "type": "ui_group",
-        "name": "exemple 4 ",
-        "tab": "",
-        "order": 1,
-        "disp": true,
-        "width": 28,
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "d88a9b6cf9ae02ec",
         "type": "tls-config",
         "name": "",
