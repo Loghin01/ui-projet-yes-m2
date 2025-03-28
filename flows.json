@@ -1,0 +1,543 @@
+[
+    {
+        "id": "73ce62a59fdd7773",
+        "type": "tab",
+        "label": "Heure",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ae6ce4941c81c5c7",
+        "type": "ui_tab",
+        "name": "Détection d'inconfort",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c0f2414017e56cae",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#402c54",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#402c54",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#402c54",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#664686",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#402c54",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "e0d68008298eaddd",
+        "type": "ui_group",
+        "name": "exemple 4 ",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 28,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d88a9b6cf9ae02ec",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "client.crt",
+        "keyname": "client.key",
+        "caname": "ca.crt",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "1ddf0f6a44c5babd",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "172.20.10.6",
+        "port": "8883",
+        "tls": "d88a9b6cf9ae02ec",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4ee8689e3bfc1e88",
+        "type": "ui_group",
+        "name": "En cas d'inconfort ressenti, cliquez!",
+        "tab": "ae6ce4941c81c5c7",
+        "order": 5,
+        "disp": true,
+        "width": 7,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "23bc571ddb457f7d",
+        "type": "exec",
+        "z": "73ce62a59fdd7773",
+        "command": "time /t",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 550,
+        "y": 120,
+        "wires": [
+            [
+                "d22bc7b5ab22619c"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "60604feae78c800b",
+        "type": "inject",
+        "z": "73ce62a59fdd7773",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "23bc571ddb457f7d"
+            ]
+        ]
+    },
+    {
+        "id": "d22bc7b5ab22619c",
+        "type": "ui_text",
+        "z": "73ce62a59fdd7773",
+        "group": "4ee8689e3bfc1e88",
+        "order": 1,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Heure :",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 700,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a25d680a93eae6de",
+        "type": "comment",
+        "z": "73ce62a59fdd7773",
+        "name": "récupération de l'heure via une commande",
+        "info": "",
+        "x": 520,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "0607b659c21b10ac",
+        "type": "ui_button",
+        "z": "73ce62a59fdd7773",
+        "name": "",
+        "group": "4ee8689e3bfc1e88",
+        "order": 2,
+        "width": 7,
+        "height": 3,
+        "passthru": false,
+        "label": "hautement inconfortable",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "red",
+        "className": "",
+        "icon": "",
+        "payload": "hautement inconfortable",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 130,
+        "y": 540,
+        "wires": [
+            [
+                "74b37b65efd615bb"
+            ]
+        ]
+    },
+    {
+        "id": "304f5963ed2b69b4",
+        "type": "ui_button",
+        "z": "73ce62a59fdd7773",
+        "name": "",
+        "group": "4ee8689e3bfc1e88",
+        "order": 3,
+        "width": 7,
+        "height": 3,
+        "passthru": false,
+        "label": "inconfortable",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "orange",
+        "className": "",
+        "icon": "",
+        "payload": "inconfortable",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 460,
+        "wires": [
+            [
+                "74b37b65efd615bb"
+            ]
+        ]
+    },
+    {
+        "id": "74b37b65efd615bb",
+        "type": "function",
+        "z": "73ce62a59fdd7773",
+        "name": "formatage .csv",
+        "func": "var timestamp = new Date().toISOString(); \n\nmsg.payload = `${timestamp};${msg.payload}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 540,
+        "wires": [
+            [
+                "948762acc43f9183"
+            ]
+        ]
+    },
+    {
+        "id": "948762acc43f9183",
+        "type": "file",
+        "z": "73ce62a59fdd7773",
+        "name": "",
+        "filename": "C:\\Users\\paul2\\Desktop\\cours\\M2\\projet YES\\releves_inconfort_tests\\releves_projet_yes_m2.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 830,
+        "y": 540,
+        "wires": [
+            [
+                "99abe6463f7e804c"
+            ]
+        ]
+    },
+    {
+        "id": "1b166c2f8e7adf0c",
+        "type": "ui_button",
+        "z": "73ce62a59fdd7773",
+        "name": "",
+        "group": "4ee8689e3bfc1e88",
+        "order": 4,
+        "width": 7,
+        "height": 3,
+        "passthru": false,
+        "label": "pas d'inconfort détecté",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "green",
+        "className": "",
+        "icon": "",
+        "payload": "pas d inconfort detecte",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 620,
+        "wires": [
+            [
+                "74b37b65efd615bb"
+            ]
+        ]
+    },
+    {
+        "id": "6963f5160e237eaa",
+        "type": "ui_toast",
+        "z": "73ce62a59fdd7773",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": false,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 1390,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "99abe6463f7e804c",
+        "type": "function",
+        "z": "73ce62a59fdd7773",
+        "name": "function 1",
+        "func": "msg.payload = \"information envoyé !\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 540,
+        "wires": [
+            [
+                "6963f5160e237eaa"
+            ]
+        ]
+    },
+    {
+        "id": "42007bc73767e4b6",
+        "type": "ui_toast",
+        "z": "73ce62a59fdd7773",
+        "position": "prompt",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "cf145d358b6b6bd4"
+            ]
+        ]
+    },
+    {
+        "id": "ad0d536b67c89e7d",
+        "type": "function",
+        "z": "73ce62a59fdd7773",
+        "name": "function 2",
+        "func": "msg.payload = \"Bonjour, bienvenue sur l'application qui vous permettera d'indiquer en temps réel l'inconfort que vous ressentez. pour cela, il suffit de cliquer sur les bouton correspondant dès que vous ressentez quelquonque inconfort.\\n Merci d'indiquer le  numéro donné par le superviseur :\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "42007bc73767e4b6"
+            ]
+        ]
+    },
+    {
+        "id": "cf145d358b6b6bd4",
+        "type": "function",
+        "z": "73ce62a59fdd7773",
+        "name": "formatage .csv",
+        "func": "var timestamp = new Date().toISOString(); \nif (msg.payload === \"Cancel\" || msg.payload === \"\") {\n    return null\n}\nelse{\n    msg.payload = `\\n${timestamp};${msg.payload}\\n`;\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 280,
+        "wires": [
+            [
+                "c5b4a01af15c293d"
+            ]
+        ]
+    },
+    {
+        "id": "c5b4a01af15c293d",
+        "type": "file",
+        "z": "73ce62a59fdd7773",
+        "name": "",
+        "filename": "C:\\Users\\paul2\\Desktop\\cours\\M2\\projet YES\\releves_inconfort_tests\\releves_projet_yes_m2.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1070,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "34ce3dc5ab110674",
+        "type": "ui_ui_control",
+        "z": "73ce62a59fdd7773",
+        "name": "",
+        "events": "connect",
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "ad0d536b67c89e7d"
+            ]
+        ]
+    },
+    {
+        "id": "6f3c1b10366eb665",
+        "type": "comment",
+        "z": "73ce62a59fdd7773",
+        "name": "notification au lancement de l'application",
+        "info": "",
+        "x": 520,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6f3349d59fb1fcad",
+        "type": "comment",
+        "z": "73ce62a59fdd7773",
+        "name": "gestion des boutons et de l'enregistrement",
+        "info": "",
+        "x": 520,
+        "y": 380,
+        "wires": []
+    }
+]
