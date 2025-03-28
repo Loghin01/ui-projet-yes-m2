@@ -537,7 +537,7 @@
         "name": "gestion des boutons et de l'enregistrement",
         "info": "",
         "x": 520,
-        "y": 380,
+        "y": 400,
         "wires": []
     }
 ]
