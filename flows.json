@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "06391d2058e584f1",
+        "type": "tab",
+        "label": "Flux 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ae6ce4941c81c5c7",
         "type": "ui_tab",
         "name": "Détection d'inconfort",
@@ -124,6 +132,25 @@
         "className": ""
     },
     {
+        "id": "0227db5017f61ee5",
+        "type": "ui_tab",
+        "name": "monitoring inconfort",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "754cfe1ed0969013",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "0227db5017f61ee5",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "23bc571ddb457f7d",
         "type": "exec",
         "z": "73ce62a59fdd7773",
@@ -229,7 +256,8 @@
         "y": 540,
         "wires": [
             [
-                "74b37b65efd615bb"
+                "74b37b65efd615bb",
+                "c070d88ae9efdfe5"
             ]
         ]
     },
@@ -257,7 +285,8 @@
         "y": 460,
         "wires": [
             [
-                "74b37b65efd615bb"
+                "74b37b65efd615bb",
+                "c070d88ae9efdfe5"
             ]
         ]
     },
@@ -324,7 +353,8 @@
         "y": 620,
         "wires": [
             [
-                "74b37b65efd615bb"
+                "74b37b65efd615bb",
+                "c070d88ae9efdfe5"
             ]
         ]
     },
@@ -482,5 +512,123 @@
         "x": 520,
         "y": 400,
         "wires": []
+    },
+    {
+        "id": "c070d88ae9efdfe5",
+        "type": "link out",
+        "z": "73ce62a59fdd7773",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "d93b78f117033462"
+        ],
+        "x": 315,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "e727b3c329d0049d",
+        "type": "ui_chart",
+        "z": "06391d2058e584f1",
+        "name": "",
+        "group": "754cfe1ed0969013",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "25",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 710,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d93b78f117033462",
+        "type": "link in",
+        "z": "06391d2058e584f1",
+        "name": "link in 1",
+        "links": [
+            "c070d88ae9efdfe5"
+        ],
+        "x": 445,
+        "y": 220,
+        "wires": [
+            [
+                "05351ecf5f311d60"
+            ]
+        ]
+    },
+    {
+        "id": "05351ecf5f311d60",
+        "type": "function",
+        "z": "06391d2058e584f1",
+        "name": "function 3",
+        "func": "let valeurBouton = msg.payload;\nlet valeurNumerique;\n\nif (valeurBouton === \"confortable\") {\n    valeurNumerique = 0;\n} else if (valeurBouton === \"inconfortable\") {\n    valeurNumerique = 5;\n} else if (valeurBouton === \"très inconfortable\") {\n    valeurNumerique = 10;\n} else {\n    // Tu peux ajouter ici une gestion pour les cas où la valeur ne correspond à aucune des options\n    valeurNumerique = 0; // Par exemple, retourner 0 par défaut\n}\n\nmsg.payload = valeurNumerique;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 220,
+        "wires": [
+            [
+                "e727b3c329d0049d"
+            ]
+        ]
+    },
+    {
+        "id": "0eefabbc6e7fd62a",
+        "type": "inject",
+        "z": "06391d2058e584f1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "confortable",
+        "payloadType": "str",
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "05351ecf5f311d60"
+            ]
+        ]
     }
 ]
