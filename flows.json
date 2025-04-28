@@ -146,7 +146,7 @@
         "tab": "0227db5017f61ee5",
         "order": 1,
         "disp": true,
-        "width": 6,
+        "width": 20,
         "collapse": false,
         "className": ""
     },
@@ -532,10 +532,10 @@
         "z": "06391d2058e584f1",
         "name": "",
         "group": "754cfe1ed0969013",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "label": "chart",
+        "order": 1,
+        "width": 20,
+        "height": 4,
+        "label": "ressenti d'inconfort et mesure d'angle de tangage",
         "chartType": "line",
         "legend": "true",
         "xformat": "HH:mm:ss",
@@ -564,7 +564,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 710,
+        "x": 850,
         "y": 220,
         "wires": [
             []
