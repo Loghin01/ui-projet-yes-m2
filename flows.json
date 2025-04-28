@@ -242,23 +242,22 @@
         "width": 7,
         "height": 3,
         "passthru": false,
-        "label": "hautement inconfortable",
+        "label": "très inconfortable",
         "tooltip": "",
         "color": "",
         "bgcolor": "red",
         "className": "",
         "icon": "",
-        "payload": "hautement inconfortable",
+        "payload": "très inconfortable",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 130,
+        "x": 110,
         "y": 540,
         "wires": [
             [
                 "74b37b65efd615bb",
-                "c070d88ae9efdfe5",
-                "b8448124a1db9df4"
+                "c070d88ae9efdfe5"
             ]
         ]
     },
@@ -287,8 +286,7 @@
         "wires": [
             [
                 "74b37b65efd615bb",
-                "c070d88ae9efdfe5",
-                "b8448124a1db9df4"
+                "c070d88ae9efdfe5"
             ]
         ]
     },
@@ -341,23 +339,22 @@
         "width": 7,
         "height": 3,
         "passthru": false,
-        "label": "pas d'inconfort détecté",
+        "label": "confortable",
         "tooltip": "",
         "color": "",
         "bgcolor": "green",
         "className": "",
         "icon": "",
-        "payload": "pas d inconfort detecte",
+        "payload": "confortable",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 140,
+        "x": 110,
         "y": 620,
         "wires": [
             [
                 "74b37b65efd615bb",
-                "c070d88ae9efdfe5",
-                "b8448124a1db9df4"
+                "c070d88ae9efdfe5"
             ]
         ]
     },
@@ -530,22 +527,6 @@
         "wires": []
     },
     {
-        "id": "b8448124a1db9df4",
-        "type": "debug",
-        "z": "73ce62a59fdd7773",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 400,
-        "y": 640,
-        "wires": []
-    },
-    {
         "id": "e727b3c329d0049d",
         "type": "ui_chart",
         "z": "06391d2058e584f1",
@@ -601,8 +582,7 @@
         "y": 220,
         "wires": [
             [
-                "05351ecf5f311d60",
-                "1d893fdf9a670468"
+                "05351ecf5f311d60"
             ]
         ]
     },
@@ -650,21 +630,5 @@
                 "05351ecf5f311d60"
             ]
         ]
-    },
-    {
-        "id": "1d893fdf9a670468",
-        "type": "debug",
-        "z": "06391d2058e584f1",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 280,
-        "wires": []
     }
 ]
