@@ -151,6 +151,37 @@
         "className": ""
     },
     {
+        "id": "ed2ecda10cc85ce1",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "127.0.0.1",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
         "id": "23bc571ddb457f7d",
         "type": "exec",
         "z": "73ce62a59fdd7773",
@@ -564,7 +595,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 850,
+        "x": 890,
         "y": 220,
         "wires": [
             []
@@ -578,7 +609,7 @@
         "links": [
             "c070d88ae9efdfe5"
         ],
-        "x": 445,
+        "x": 425,
         "y": 220,
         "wires": [
             [
@@ -630,5 +661,128 @@
                 "05351ecf5f311d60"
             ]
         ]
+    },
+    {
+        "id": "25d42ea11cc25a19",
+        "type": "mqtt in",
+        "z": "06391d2058e584f1",
+        "name": "",
+        "topic": "test",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ed2ecda10cc85ce1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "e727b3c329d0049d",
+                "9ca4fec540a6af0a",
+                "a0ace1bd44e7bdb8"
+            ]
+        ]
+    },
+    {
+        "id": "9ca4fec540a6af0a",
+        "type": "function",
+        "z": "06391d2058e584f1",
+        "name": "formatage .csv",
+        "func": "var timestamp\n\nmsg.payload = `${timestamp};${msg.payload}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "87e3df4dfc4c76db"
+            ]
+        ]
+    },
+    {
+        "id": "87e3df4dfc4c76db",
+        "type": "file",
+        "z": "06391d2058e584f1",
+        "name": "",
+        "filename": "C:\\Users\\paul2\\Desktop\\cours\\M2\\projet YES\\releves_inconfort_tests\\releves_angles_projet_yes_m2.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1060,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f561128cbf4cd32e",
+        "type": "mqtt out",
+        "z": "06391d2058e584f1",
+        "name": "",
+        "topic": "test",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ed2ecda10cc85ce1",
+        "x": 450,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "8f93dacdb92b902d",
+        "type": "inject",
+        "z": "06391d2058e584f1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 420,
+        "wires": [
+            [
+                "f561128cbf4cd32e"
+            ]
+        ]
+    },
+    {
+        "id": "a0ace1bd44e7bdb8",
+        "type": "debug",
+        "z": "06391d2058e584f1",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 280,
+        "wires": []
     }
 ]
