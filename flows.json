@@ -667,7 +667,7 @@
         "type": "mqtt in",
         "z": "06391d2058e584f1",
         "name": "",
-        "topic": "test",
+        "topic": "esp32/pitch",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "ed2ecda10cc85ce1",
@@ -675,7 +675,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 390,
+        "x": 410,
         "y": 280,
         "wires": [
             [
