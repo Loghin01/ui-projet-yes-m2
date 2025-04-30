@@ -727,7 +727,7 @@
         "type": "mqtt out",
         "z": "06391d2058e584f1",
         "name": "",
-        "topic": "test",
+        "topic": "esp32/pitch",
         "qos": "2",
         "retain": "",
         "respTopic": "",
@@ -736,7 +736,7 @@
         "correl": "",
         "expiry": "",
         "broker": "ed2ecda10cc85ce1",
-        "x": 450,
+        "x": 470,
         "y": 420,
         "wires": []
     },
