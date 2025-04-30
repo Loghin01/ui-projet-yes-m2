@@ -159,7 +159,7 @@
         "clientid": "",
         "autoConnect": true,
         "usetls": false,
-        "protocolVersion": "5",
+        "protocolVersion": "4",
         "keepalive": 60,
         "cleansession": true,
         "autoUnsubscribe": true,
