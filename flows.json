@@ -573,7 +573,7 @@
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
-        "ymin": "0",
+        "ymin": "-25",
         "ymax": "25",
         "removeOlder": 1,
         "removeOlderPoints": "",
