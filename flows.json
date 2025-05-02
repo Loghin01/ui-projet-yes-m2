@@ -811,7 +811,7 @@
         "type": "function",
         "z": "06391d2058e584f1",
         "name": "formatage .csv",
-        "func": "msg.payload = [msg.payload[1]];  // 3ème valeur\n\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "func": "msg.payload = [msg.payload[1]];  // 3ème valeur\nmsg.topic = \"angle\";\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
