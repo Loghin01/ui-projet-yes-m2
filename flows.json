@@ -700,7 +700,8 @@
         "y": 320,
         "wires": [
             [
-                "87e3df4dfc4c76db"
+                "87e3df4dfc4c76db",
+                "a0ace1bd44e7bdb8"
             ]
         ]
     },
@@ -780,8 +781,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 280,
+        "x": 780,
+        "y": 260,
         "wires": []
     }
 ]
