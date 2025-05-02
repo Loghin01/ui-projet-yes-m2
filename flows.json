@@ -690,7 +690,7 @@
         "type": "function",
         "z": "06391d2058e584f1",
         "name": "formatage .csv",
-        "func": "var timestamp = new Date().toISOString(); \nvar data = [msg.payload];\nmsg.payload = `${timestamp};${data}`;\n\nreturn msg;",
+        "func": "var timestamp = new Date().toISOString(); \nvar data = [msg.payload];\nmsg.payload = `${timestamp};${msg.paylod.Object}`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
