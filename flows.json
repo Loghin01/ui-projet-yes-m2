@@ -680,8 +680,7 @@
         "wires": [
             [
                 "e727b3c329d0049d",
-                "9ca4fec540a6af0a",
-                "a0ace1bd44e7bdb8"
+                "9ca4fec540a6af0a"
             ]
         ]
     },
@@ -690,7 +689,7 @@
         "type": "function",
         "z": "06391d2058e584f1",
         "name": "formatage .csv",
-        "func": "var timestamp = new Date().toISOString(); \nvar data = [msg.payload];\nmsg.payload = `${timestamp};${msg.paylod}`;\n\nreturn msg;",
+        "func": "var timestamp = new Date().toISOString(); \n\nvar data = msg.payload[0]; msg.payload[1]; msg.payload[2]  // 3ème valeur\n\nmsg.payload = `${timestamp};${data}`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
