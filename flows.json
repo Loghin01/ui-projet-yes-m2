@@ -326,7 +326,7 @@
         "type": "function",
         "z": "73ce62a59fdd7773",
         "name": "formatage .csv",
-        "func": "var timestamp = new Date().toISOString(); \n\nmsg.payload = `${timestamp};${msg.payload}`;\n\nreturn msg;",
+        "func": "var timestamp = new Date().toISOString(); \n\nmsg.payload = `${timestamp}, ${msg.payload}`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
