@@ -679,7 +679,8 @@
         "y": 280,
         "wires": [
             [
-                "9ca4fec540a6af0a"
+                "9ca4fec540a6af0a",
+                "64b50b63b632c23c"
             ]
         ]
     },
@@ -700,8 +701,7 @@
         "wires": [
             [
                 "87e3df4dfc4c76db",
-                "a0ace1bd44e7bdb8",
-                "e727b3c329d0049d"
+                "a0ace1bd44e7bdb8"
             ]
         ]
     },
@@ -784,5 +784,23 @@
         "x": 780,
         "y": 260,
         "wires": []
+    },
+    {
+        "id": "64b50b63b632c23c",
+        "type": "function",
+        "z": "06391d2058e584f1",
+        "name": "formatage .csv",
+        "func": "\nmsg.payload = [msg.payload[0], msg.payload[1], msg.payload[2]];  // 3ème valeur\n\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 280,
+        "wires": [
+            []
+        ]
     }
 ]
