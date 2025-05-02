@@ -622,7 +622,7 @@
         "type": "function",
         "z": "06391d2058e584f1",
         "name": "function 3",
-        "func": "let valeurBouton = msg.payload;\nlet valeurNumerique;\n\nif (valeurBouton === \"confortable\") {\n    valeurNumerique = 0;\n} else if (valeurBouton === \"inconfortable\") {\n    valeurNumerique = 5;\n} else if (valeurBouton === \"très inconfortable\") {\n    valeurNumerique = 10;\n} else {\n    // Tu peux ajouter ici une gestion pour les cas où la valeur ne correspond à aucune des options\n    valeurNumerique = 0; // Par exemple, retourner 0 par défaut\n}\n\nmsg.payload = valeurNumerique;\nreturn msg;",
+        "func": "let valeurBouton = msg.payload;\nlet valeurNumerique;\nmsg.topic = \"ressenti\";\nif (valeurBouton === \"confortable\") {\n    valeurNumerique = 0;\n} else if (valeurBouton === \"inconfortable\") {\n    valeurNumerique = 5;\n} else if (valeurBouton === \"très inconfortable\") {\n    valeurNumerique = 10;\n} else {\n    // Tu peux ajouter ici une gestion pour les cas où la valeur ne correspond à aucune des options\n    valeurNumerique = 0; // Par exemple, retourner 0 par défaut\n}\n\nmsg.payload = valeurNumerique;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
