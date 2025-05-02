@@ -583,7 +583,7 @@
         "useUTC": true,
         "colors": [
             "#1f77b4",
-            "#aec7e8",
+            "#eeff00",
             "#ff7f0e",
             "#2ca02c",
             "#98df8a",
@@ -596,7 +596,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 890,
-        "y": 220,
+        "y": 240,
         "wires": [
             []
         ]
@@ -630,7 +630,7 @@
         "finalize": "",
         "libs": [],
         "x": 560,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "e727b3c329d0049d"
@@ -680,7 +680,8 @@
         "wires": [
             [
                 "9ca4fec540a6af0a",
-                "64b50b63b632c23c"
+                "64b50b63b632c23c",
+                "a046c53b12d11abd"
             ]
         ]
     },
@@ -697,7 +698,7 @@
         "finalize": "",
         "libs": [],
         "x": 580,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "87e3df4dfc4c76db",
@@ -717,7 +718,7 @@
         "overwriteFile": "false",
         "encoding": "none",
         "x": 1060,
-        "y": 320,
+        "y": 340,
         "wires": [
             []
         ]
@@ -782,7 +783,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 780,
-        "y": 260,
+        "y": 300,
         "wires": []
     },
     {
@@ -790,7 +791,7 @@
         "type": "function",
         "z": "06391d2058e584f1",
         "name": "formatage .csv",
-        "func": "\nmsg.payload = [msg.payload[0], msg.payload[1], msg.payload[2]];  // 3ème valeur\n\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "func": "\nmsg.payload = [msg.payload[0]];  // 3ème valeur\n\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -798,7 +799,27 @@
         "finalize": "",
         "libs": [],
         "x": 580,
-        "y": 280,
+        "y": 300,
+        "wires": [
+            [
+                "e727b3c329d0049d"
+            ]
+        ]
+    },
+    {
+        "id": "a046c53b12d11abd",
+        "type": "function",
+        "z": "06391d2058e584f1",
+        "name": "formatage .csv",
+        "func": "msg.payload = [msg.payload[1]];  // 3ème valeur\n\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 260,
         "wires": [
             [
                 "e727b3c329d0049d"
