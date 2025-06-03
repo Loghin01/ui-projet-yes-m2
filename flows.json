@@ -567,7 +567,7 @@
         "width": 30,
         "height": 5,
         "label": "ressenti d'inconfort",
-        "chartType": "bar",
+        "chartType": "line",
         "legend": "true",
         "xformat": "HH:mm:ss",
         "interpolate": "linear",
