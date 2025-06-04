@@ -458,7 +458,7 @@
         "type": "function",
         "z": "73ce62a59fdd7773",
         "name": "function 2",
-        "func": "msg.payload = \"Bonjour, bienvenue sur l'application qui vous permettra d'indiquer en temps réel l'inconfort que vous ressentez.\\n Pour cela, il suffit de cliquer sur les boutons correspondants dès que vous ressentez quelconque inconfort. \\n Merci d'indiquer le numéro donné par le superviseur :\"\nreturn msg;",
+        "func": "msg.payload = \"Bonjour, bienvenue sur l'application qui vous permettra d'indiquer en temps réel l'inconfort que vous ressentez.{\\n} Pour cela, il suffit de cliquer sur les boutons correspondants dès que vous ressentez quelconque inconfort. \\n Merci d'indiquer le numéro donné par le superviseur :\"\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
