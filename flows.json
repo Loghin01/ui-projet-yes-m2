@@ -154,7 +154,7 @@
         "id": "ed2ecda10cc85ce1",
         "type": "mqtt-broker",
         "name": "",
-        "broker": "192.168.4.3",
+        "broker": "192.168.4.1",
         "port": 1883,
         "clientid": "",
         "autoConnect": true,
