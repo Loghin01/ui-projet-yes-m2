@@ -778,7 +778,7 @@
         "type": "function",
         "z": "06391d2058e584f1",
         "name": "formatage .csv",
-        "func": "\nmsg.payload = [msg.payload[0]];  // 1ème valeur\nmsg.topic = \"az\"\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "func": "\nmsg.payload = [msg.payload[0]];  // 1ème valeur\nmsg.topic = \"ax\"\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
