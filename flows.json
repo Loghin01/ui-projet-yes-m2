@@ -595,8 +595,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 790,
-        "y": 220,
+        "x": 810,
+        "y": 40,
         "wires": [
             []
         ]
@@ -609,8 +609,8 @@
         "links": [
             "c070d88ae9efdfe5"
         ],
-        "x": 425,
-        "y": 220,
+        "x": 445,
+        "y": 80,
         "wires": [
             [
                 "05351ecf5f311d60"
@@ -629,8 +629,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
-        "y": 220,
+        "x": 580,
+        "y": 40,
         "wires": [
             [
                 "e727b3c329d0049d"
@@ -654,8 +654,8 @@
         "topic": "",
         "payload": "confortable",
         "payloadType": "str",
-        "x": 370,
-        "y": 160,
+        "x": 390,
+        "y": 40,
         "wires": [
             [
                 "05351ecf5f311d60"
@@ -682,7 +682,10 @@
                 "9ca4fec540a6af0a",
                 "64b50b63b632c23c",
                 "a046c53b12d11abd",
-                "91aa7d3ba5f0bbb8"
+                "91aa7d3ba5f0bbb8",
+                "331299f57e56a6a0",
+                "db6582680a4d60d2",
+                "a82765c57682573c"
             ]
         ]
     },
@@ -775,7 +778,7 @@
         "type": "function",
         "z": "06391d2058e584f1",
         "name": "formatage .csv",
-        "func": "\nmsg.payload = [msg.payload[0]];  // 3ème valeur\nmsg.topic = \"acceleration\"\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "func": "\nmsg.payload = [msg.payload[0]];  // 1ème valeur\nmsg.topic = \"az\"\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -783,7 +786,7 @@
         "finalize": "",
         "libs": [],
         "x": 580,
-        "y": 300,
+        "y": 200,
         "wires": [
             [
                 "9f48dc84577446f6"
@@ -795,7 +798,7 @@
         "type": "function",
         "z": "06391d2058e584f1",
         "name": "formatage .csv",
-        "func": "msg.payload = [msg.payload[1]];  // 3ème valeur\nmsg.topic = \"angle\";\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "func": "msg.payload = [msg.payload[3]];  // 4ème valeur\nmsg.topic = \"pitch\";\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -803,7 +806,7 @@
         "finalize": "",
         "libs": [],
         "x": 580,
-        "y": 260,
+        "y": 100,
         "wires": [
             [
                 "e937c98facd8fc74"
@@ -849,7 +852,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 820,
-        "y": 260,
+        "y": 120,
         "wires": [
             []
         ]
@@ -893,7 +896,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 830,
-        "y": 300,
+        "y": 240,
         "wires": [
             []
         ]
@@ -913,5 +916,65 @@
         "x": 520,
         "y": 380,
         "wires": []
+    },
+    {
+        "id": "db6582680a4d60d2",
+        "type": "function",
+        "z": "06391d2058e584f1",
+        "name": "formatage .csv",
+        "func": "msg.payload = [msg.payload[4]];  // 5ème valeur\nmsg.topic = \"roll\";\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 140,
+        "wires": [
+            [
+                "e937c98facd8fc74"
+            ]
+        ]
+    },
+    {
+        "id": "331299f57e56a6a0",
+        "type": "function",
+        "z": "06391d2058e584f1",
+        "name": "formatage .csv",
+        "func": "\nmsg.payload = [msg.payload[1]];  // 2ème valeur\nmsg.topic = \"ay\"\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 240,
+        "wires": [
+            [
+                "9f48dc84577446f6"
+            ]
+        ]
+    },
+    {
+        "id": "a82765c57682573c",
+        "type": "function",
+        "z": "06391d2058e584f1",
+        "name": "formatage .csv",
+        "func": "\nmsg.payload = [msg.payload[2]];  // 2ème valeur\nmsg.topic = \"az\"\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 280,
+        "wires": [
+            [
+                "9f48dc84577446f6"
+            ]
+        ]
     }
 ]
