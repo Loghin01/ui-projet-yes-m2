@@ -595,7 +595,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 810,
+        "x": 790,
         "y": 40,
         "wires": [
             []
@@ -685,7 +685,10 @@
                 "91aa7d3ba5f0bbb8",
                 "331299f57e56a6a0",
                 "db6582680a4d60d2",
-                "a82765c57682573c"
+                "a82765c57682573c",
+                "f27dfab0bd99ee9c",
+                "264a5090644a583d",
+                "215b7b9ccfaf14b6"
             ]
         ]
     },
@@ -694,7 +697,7 @@
         "type": "function",
         "z": "06391d2058e584f1",
         "name": "formatage .csv",
-        "func": "var timestamp = new Date().toISOString(); \n\nmsg.payload = [msg.payload[0], msg.payload[1], msg.payload[2], msg.payload[3], msg.payload[4]];  // 3ème valeur\n\nmsg.payload = `${timestamp};${msg.payload}`;\n\nreturn msg;",
+        "func": "var timestamp = new Date().toISOString(); \n\nmsg.payload = [msg.payload[0], msg.payload[1], msg.payload[2], msg.payload[3], msg.payload[4], msg.payload[5], msg.payload[6], msg.payload[7]];  // 3ème valeur\n\nmsg.payload = `${timestamp};${msg.payload}`;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -702,7 +705,7 @@
         "finalize": "",
         "libs": [],
         "x": 580,
-        "y": 340,
+        "y": 480,
         "wires": [
             [
                 "87e3df4dfc4c76db"
@@ -721,56 +724,9 @@
         "overwriteFile": "false",
         "encoding": "none",
         "x": 1060,
-        "y": 340,
+        "y": 480,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "f561128cbf4cd32e",
-        "type": "mqtt out",
-        "z": "06391d2058e584f1",
-        "name": "",
-        "topic": "esp32/pitch",
-        "qos": "0",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "ed2ecda10cc85ce1",
-        "x": 470,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "8f93dacdb92b902d",
-        "type": "inject",
-        "z": "06391d2058e584f1",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 250,
-        "y": 420,
-        "wires": [
-            [
-                "f561128cbf4cd32e"
-            ]
         ]
     },
     {
@@ -866,7 +822,7 @@
         "order": 3,
         "width": 30,
         "height": 5,
-        "label": "mesure d'accélération ressenti",
+        "label": "mesure d'accélération",
         "chartType": "line",
         "legend": "true",
         "xformat": "HH:mm:ss",
@@ -895,7 +851,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 830,
+        "x": 800,
         "y": 240,
         "wires": [
             []
@@ -913,8 +869,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 520,
-        "y": 380,
+        "x": 560,
+        "y": 560,
         "wires": []
     },
     {
@@ -975,6 +931,110 @@
             [
                 "9f48dc84577446f6"
             ]
+        ]
+    },
+    {
+        "id": "f27dfab0bd99ee9c",
+        "type": "function",
+        "z": "06391d2058e584f1",
+        "name": "formatage .csv",
+        "func": "\nmsg.payload = [msg.payload[5]];  // 2ème valeur\nmsg.topic = \"vx\"\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 340,
+        "wires": [
+            [
+                "7889591c6d184fca"
+            ]
+        ]
+    },
+    {
+        "id": "264a5090644a583d",
+        "type": "function",
+        "z": "06391d2058e584f1",
+        "name": "formatage .csv",
+        "func": "\nmsg.payload = [msg.payload[5]];  // 2ème valeur\nmsg.topic = \"vx\"\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 380,
+        "wires": [
+            [
+                "7889591c6d184fca"
+            ]
+        ]
+    },
+    {
+        "id": "215b7b9ccfaf14b6",
+        "type": "function",
+        "z": "06391d2058e584f1",
+        "name": "formatage .csv",
+        "func": "\nmsg.payload = [msg.payload[5]];  // 2ème valeur\nmsg.topic = \"vx\"\nmsg.payload = `${msg.payload}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 420,
+        "wires": [
+            [
+                "7889591c6d184fca"
+            ]
+        ]
+    },
+    {
+        "id": "7889591c6d184fca",
+        "type": "ui_chart",
+        "z": "06391d2058e584f1",
+        "name": "",
+        "group": "754cfe1ed0969013",
+        "order": 3,
+        "width": 30,
+        "height": 5,
+        "label": "mesure de vitesse",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-2.5",
+        "ymax": "2.5",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1eb330",
+            "#fbff05",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 380,
+        "wires": [
+            []
         ]
     }
 ]
