@@ -667,7 +667,7 @@
         "type": "mqtt in",
         "z": "06391d2058e584f1",
         "name": "",
-        "topic": "esp32/pitch",
+        "topic": "esp32/oriantation",
         "qos": "0",
         "datatype": "auto-detect",
         "broker": "ed2ecda10cc85ce1",
@@ -675,7 +675,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 370,
+        "x": 380,
         "y": 300,
         "wires": [
             [
