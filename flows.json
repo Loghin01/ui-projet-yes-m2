@@ -778,7 +778,7 @@
         "order": 2,
         "width": 30,
         "height": 5,
-        "label": "mesure d'angle de tangage",
+        "label": "mesure d'angle",
         "chartType": "line",
         "legend": "true",
         "xformat": "HH:mm:ss",
@@ -807,7 +807,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 820,
+        "x": 780,
         "y": 120,
         "wires": [
             []
